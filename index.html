@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel = 'stylesheet' href='style.css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-      
-    </head>
-    <body>
-    <h1>
-        Weather Dashboard
-    </h1>
-    <div></div>
+<head>
+  <link rel='stylesheet' href='style.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-            <script type="text/javascript" src="script.js"></script>
-    </body>
+
+</head>
+
+<body>
+  <h1>
+    Weather Dashboard
+  </h1>
+  <!-- SEARCH BAR AND RECENT HISTORY -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        Search for a city
+        <p class=search-bar>
+          <input class="user-input" type="textbox"></input>
+          <button class="save-btn" type="button">Search</button>
+        </p>
+      </div>
+      <div class="temp">
+        <!-- SEARCHED WEATHER DATA -->
+        <div class="city"></div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+        <div class="temp"></div>
+      </div>
+      <!-- 5 DAY FORECAST -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>
