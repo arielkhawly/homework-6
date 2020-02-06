@@ -62,19 +62,21 @@ $(document).ready(function () {
           return day.dt_txt.includes("12:00:00"); // have the function return from the 'day' object, the selected array, and have it include a selected string
         });
         for (let day of noonForecast) { // create a for loop to pull each of the below from noonforecast w/ the designated inclusion
-          let fiveDayDate = moment(day.dt_txt).format('M/D/ YYYY');
+          let fiveDiv = $('<div></div>').addClass('col');
+          let fiveDayDate = $('<div>' + moment(day.dt_txt).format('M/D/YYYY') + '</div>');
           let fiveFaren = Math.floor(day.main.temp - 273.5) * 1.80 + 32
           let fiveTemp = $('<div> Temp:' + fiveFaren + "</div>")
           let fiveHumidity = $('<div>Humidity:' + day.main.humidity + '% </div>');
-          let iconImage = $('<img src=\"http://openweathermap.org/img/wn/' + day.weather[0].icon +'@2x.png\"/>')
+          let iconImage = $('<img src=\"http://openweathermap.org/img/wn/' + day.weather[0].icon + '@2x.png\"/>')
           console.log(day);
-          $('.five-day').append(fiveDayDate, iconImage, fiveTemp, fiveHumidity);
+          fiveDiv.append(fiveDayDate, iconImage, fiveTemp, fiveHumidity);
+          $('.five-day').append(fiveDiv)
 
-        };
+    };
 
-      });
+  });
 
-    });
+});
   });
 
 
