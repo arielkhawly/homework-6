@@ -31,7 +31,8 @@ $(document).ready(function () {
       // declare a var that converts kelvin to farenheight 
       let faren = Math.floor(response.main.temp - 273.5) * 1.80 + 32
       //Create divs for city name, temp, wind, and humidity
-      let cityName = $('<div>' + city.charAt(0).toUpperCase() + city.slice(1) + '</div>');
+      let cityName = $('<div>' + city + '</div>');
+      cityName.addClass('capitalize')
       let tempDiv = $('<div> Temperature: ' + faren + '</div>') // replace response with your farenheight var
       let windDiv = $('<div> Wind Speed: ' + response.wind.speed + 'MPH </div>')
       let humDiv = $('<div> Humidity: ' + response.main.humidity + "%" + "</div>")
@@ -61,12 +62,13 @@ $(document).ready(function () {
           return day.dt_txt.includes("12:00:00"); // have the function return from the 'day' object, the selected array, and have it include a selected string
         });
         for (let day of noonForecast) { // create a for loop to pull each of the below from noonforecast w/ the designated inclusion
+          let fiveDayDate = moment(day.dt_txt).format('M/D/ YYYY');
           let fiveFaren = Math.floor(day.main.temp - 273.5) * 1.80 + 32
           let fiveTemp = $('<div> Temp:' + fiveFaren + "</div>")
           let fiveHumidity = $('<div>Humidity:' + day.main.humidity + '% </div>');
           let iconImage = $('<img src=\"http://openweathermap.org/img/wn/' + day.weather[0].icon +'@2x.png\"/>')
           console.log(day);
-          $('.five-day').append(iconImage, fiveTemp, fiveHumidity);
+          $('.five-day').append(fiveDayDate, iconImage, fiveTemp, fiveHumidity);
 
         };
 
