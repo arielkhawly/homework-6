@@ -8,3 +8,7 @@ h1 {
 .capitalize {
     text-transform: capitalize;
 }
+.search-history {
+ display: flex;
+ flex-direction: column;
+}
